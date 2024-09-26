@@ -26,6 +26,6 @@ This platform connects sponsors and influencers, allowing sponsors to get their 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/influencer-sponsorship-platform.git
+   git clone [https://github.com/yourusername/influencer-sponsorship-platform.git](https://github.com/T-Naveen-2308/Influencer-and-Sponsorship-Platform.git)
    cd influencer-sponsorship-platform/backend
    ```
