@@ -77,26 +77,26 @@ This platform connects sponsors and influencers, allowing sponsors to get their 
    npm start
    ```
 
-# Usage
+## Usage
 
-## For Sponsors
+### For Sponsors
 - Sponsors can create an account.
 - Browse through available influencers.
 - Send sponsorship offers.
 
-## For Influencers
+### For Influencers
 - Influencers can set up their profiles.
 - Showcase their reach and audience.
 - Respond to sponsorship offers.
 
-## Deal Tracking
+### Deal Tracking
 - Once a deal is made, both parties can:
   - Track its progress through the platform.
   - Monitor campaign performance.
   - Manage payments.
 
 
-# Contributing
+## Contributing
 
 We welcome contributions! Please follow these steps to contribute:
 
@@ -119,6 +119,6 @@ We welcome contributions! Please follow these steps to contribute:
    
 5. Open a pull request.
 
-# Contact
+## Contact
 
 If you have any questions or need assistance, feel free to reach out to us at [naveentummala033@gmail.com](mailto:naveentummala033@gmail.com).
