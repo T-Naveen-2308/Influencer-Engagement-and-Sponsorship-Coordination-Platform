@@ -96,14 +96,28 @@ This platform connects sponsors and influencers, allowing sponsors to get their 
   - Manage payments.
 
 
-Contributing
+# Contributing
+
 We welcome contributions! Please follow these steps to contribute:
 
-Fork the project.
-Create a feature branch: git checkout -b feature-name
-Commit your changes: git commit -m 'Add feature'
-Push to the branch: git push origin feature-name
-Open a pull request.
+1. Fork the project.
+   
+2. Create a feature branch:
+   ```bash
+   git checkout -b feature-name
+   ```
+
+3. Commit your changes:
+   ```bash
+   git commit -m 'Add feature'
+   ```
+
+4. Push to the branch:
+   ```bash
+   git push origin feature-name
+   ```
+   
+5. Open a pull request.
 
 # Contact
 
