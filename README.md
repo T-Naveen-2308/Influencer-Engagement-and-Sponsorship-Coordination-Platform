@@ -41,19 +41,28 @@ This platform connects sponsors and influencers, allowing sponsors to get their 
    pip install -r requirements.txt
    ```
 
-4. Set up your .env file with the necessary environment variables (e.g., database credentials, secret keys).
+4. Ensure you create a `.env` file in the root directory of your project with the following environment variables:
 
-5. Run migrations to set up the database:
+```plaintext
+DATABASE_NAME=your_database_name   # Name of your database
+DATABASE_USER=your_username        # Username for the database
+DATABASE_PASSWORD=your_password    # Password for the database user
+DATABASE_HOST=your_hostname        # Host where the database is located
+DATABASE_PORT=your_port            # Port for the database connection
+```
+
+
+6. Run migrations to set up the database:
    ```bash
    python manage.py migrate
    ```
 
-6. Create a superuser for admin access:
+7. Create a superuser for admin access:
    ```bash
    python manage.py createsuperuser
    ```
 
-7. Start the Django development server:
+8. Start the Django development server:
    ```bash
    python manage.py runserver
    ```
