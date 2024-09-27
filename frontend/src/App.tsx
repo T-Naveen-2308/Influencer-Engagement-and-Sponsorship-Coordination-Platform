@@ -1,35 +1,56 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { ToastContainer, toast } from "react-toastify";
+import { useEffect, useState } from "react";
+import BrowserRouterProvider from "./BrowserRouterProvider";
 
 function App() {
-  const [count, setCount] = useState(0)
+    localStorage.setItem("theme", localStorage.getItem("theme") || "light");
+    const [theme, setTheme] = useState<string>(
+        localStorage.getItem("theme") || "light"
+    );
+    const [currentToastId, setCurrentToastId] = useState<
+        string | number | null
+    >(null);
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    const [toastStyle, setToastStyle] = useState<{
+        backgroundColor: string;
+        color: string;
+    }>(
+        theme === "dark"
+            ? { backgroundColor: "#1d232a", color: "#a6adbb" }
+            : { backgroundColor: "#ffffff", color: "#1f2937" }
+    );
+
+    useEffect(() => {
+        const newTheme = localStorage.getItem("theme");
+        if (newTheme !== theme) {
+            setTheme(newTheme || "light");
+        }
+    }, []);
+
+    useEffect(() => {
+        if (theme === "dark") {
+            setToastStyle({ backgroundColor: "#1d232a", color: "#a6adbb" });
+        } else {
+            setToastStyle({ backgroundColor: "#ffffff", color: "#1f2937" });
+        }
+
+        if (currentToastId !== null) {
+            toast.dismiss(currentToastId);
+            const newToastId = toast("This is a toast message!", {
+                style: toastStyle
+            });
+            setCurrentToastId(newToastId);
+        }
+    }, [theme]);
+
+    return (
+        <>
+            <div data-theme={theme}>
+                <ToastContainer toastStyle={toastStyle} position="top-center" />
+                <BrowserRouterProvider />
+            </div>
+        </>
+    );
 }
 
-export default App
+export default App;
